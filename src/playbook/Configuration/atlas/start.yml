@@ -28,11 +28,6 @@ actions:
       $modulesPath = """$([Environment]::GetFolderPath('Windows'))\AtlasModules"""
       Add-ToPath """$modulesPath""", """$modulesPath\Tools""", """$modulesPath\Scripts"""
 
-  ################ NO LOCAL BUILD ################
-
-  - !writeStatus: {status: 'Enabling DirectPlay'}
-  - !run: {exe: 'DISM.exe', args: '/Online /Enable-Feature /FeatureName:"DirectPlay" /NoRestart /All', weight: 30}
-  
   - !writeStatus: {status: 'Disabling Internet Explorer', builds: [ '<22000' ]}
   - !run: {exe: 'DISM.exe', args: '/Online /Disable-Feature /FeatureName:"Internet-Explorer-Optional-amd64" /NoRestart', weight: 30, builds: [ '<22000' ]}
 
@@ -88,5 +83,3 @@ actions:
     weight: 120
     option: 'browser-chrome'
     runas: currentUserElevated
-
-  ################ END NO LOCAL BUILD ################

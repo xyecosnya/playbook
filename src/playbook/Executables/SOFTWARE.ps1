@@ -186,12 +186,12 @@ NanaZip is a fork of 7-Zip with an updated user interface and extra features.
 	Install7Zip
 }
 
-# Legacy DirectX runtimes
-& curl.exe -LSs "https://download.microsoft.com/download/8/4/A/84A35BF1-DAFE-4AE8-82AF-AD2AE20B6B14/directx_Jun2010_redist.exe" -o "$tempDir\directx.exe"
-Write-Output "Extracting legacy DirectX runtimes..."
-Start-Process -FilePath "$tempDir\directx.exe" -WindowStyle Hidden -ArgumentList "/q /c /t:`"$tempDir\directx`"" -Wait
-Write-Output "Installing legacy DirectX runtimes..."
-Start-Process -FilePath "$tempDir\directx\dxsetup.exe" -WindowStyle Hidden -ArgumentList '/silent' -Wait
+# # Legacy DirectX runtimes
+# & curl.exe -LSs "https://download.microsoft.com/download/8/4/A/84A35BF1-DAFE-4AE8-82AF-AD2AE20B6B14/directx_Jun2010_redist.exe" -o "$tempDir\directx.exe"
+# Write-Output "Extracting legacy DirectX runtimes..."
+# Start-Process -FilePath "$tempDir\directx.exe" -WindowStyle Hidden -ArgumentList "/q /c /t:`"$tempDir\directx`"" -Wait
+# Write-Output "Installing legacy DirectX runtimes..."
+# Start-Process -FilePath "$tempDir\directx\dxsetup.exe" -WindowStyle Hidden -ArgumentList '/silent' -Wait
 
 # Remove temporary directory
 Remove-TempDirectory
